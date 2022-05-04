@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NZK ZZ</title>
+    <meta name="description" content="profile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <!-- Navigation Bar -->
+        <header>
+            <nav>
+    
+                <img class="logo" src= "images/SHERE SHOP-logos_transparent.png" alt="logo">
+                <div class="links">
+                    <a href="#"><%= About %></a>
+                    <a href="#"><%= Docs %></a>
+                    <button class="button_med" href="#"><%= Login %></button>
+                </div>
+            </nav>
+        </header>
+        <!-- Contents -->
+        <section class="info">
+            <h1 class="content_font1"><%=contentfont1 %></h1>
+            <h4 class="content_font2"><%=contentfont2 %></h4>
+                <div class="icons">
+                    <div class="icon">
+                        <img src="images/email.svg" alt="email">
+                        <p class="icon_info">qweasd503@gmail.com</p>
+                    </div>
+                    <div class="icon">
+                        <img src="images/facebook.svg" alt="facebook">
+                        <p class="icon_info">Phipatpol Meunkaew</p>
+                    </div>                
+                    <div class="icon">
+                        <img src="images/youtube.svg" alt="youtube">
+                        <p class="icon_info">Phipatpol Meunkaew</p>
+                    </div> 
+                    <div class="icon">
+                        <img src="images/twitter.svg" alt="twitter">
+                        <p class="icon_info">Phipatpol Meunkaew</p>
+                    </div>     
+                </div>
+        </section>
+            <!-- Feature Bar -->
+        <section class="features">
+            <!-- Add Parameters that forEach loop -->
+            <% obj_feature.forEach(function(feature){ %>
+            <div class="feature">
+                <img src= <%= feature.img %> alt="programming">
+                <div class="feature_info">
+                    <p class="feature_top"><%= feature.top %></p>
+                    <p class="feature_bottom"><%= feature.bottom %></p>
+                </div>
+            </div>
+            <% }) %>
+            <!-- Comment not use
+            <div class="feature">
+                <img src="images/aiot.jpg" alt="aiot">
+                <div class="feature_info">
+                    <p class="feature_top">AIoT and Robotics</p>
+                    <p class="feature_bottom">Enjoy Coding and Playing
+                        Python, ROS, Mechanics</p>
+                </div>
+            </div>
+            -->
+            <div class="feature">
+                <div class="feature_info">
+                    <p class="feature_more"><%= LearnMore %></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

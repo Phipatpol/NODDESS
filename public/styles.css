@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* All Class using same dataset */
+:root{
+    /* Define Variables */
+    --accent : #FD6B6B; /* Button Color from Figma */
+    --accentHover : #FFA3A3; /* Mouse Hover -> Light */
+    --dark60 : rgba(68, 90, 139, 0.6); /* 0.6 = 60% */
+    --light : #FFFFFF;
+    --transition : all 0.3s ease 0s /* Define delay time */
+}
+
+/* All Section */
+*{
+    /* Clear margin and padding */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%; /* Fixed Height using Scroll */
+    overflow: auto;
+}
+
+body{
+    /* Gradient Shade of Color */
+    /* background: linear-gradient(
+        var(--dark60), var(--dark60)
+    ),
+    url(./images/background.jpg); */
+    background-image: url("images/221.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Fixed Scale Screen */
+}
+
+a, button, p{
+    font-family: "Lato", sans-serif;
+    color: var(--light);
+}
+
+a, button, .logo{
+    cursor: pointer; /* Link Element Logo & Button --> Hand Cursor */
+}
+
+main{
+    height: 100;
+    display: grid; /* Work on grid */
+    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px))
+    minmax(60px, 1fr);
+}
+
+header{
+    grid-column: 1 / span 7; /* header start 1nd col and others last column */
+    margin-left: 5%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+/* Class */
+.links{
+    margin-left: auto;
+}
+
+.links a, .links button{
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: var(--transition); /* Action */
+}
+
+.links a{
+    margin-right: 20px;
+}
+
+.links a:hover{
+    color: var(--accentHover); /* Cursor Hover --> Change Color */
+}
+
+.button_med{
+    border: none;
+    background-color: var(--accent);
+    padding: 8px 25px;
+    transition: var(--transition);
+}
+
+.button_med:hover{
+    color: var(--accentHover);
+}
+
+.info{
+    grid-column: 3 / span 4;
+    margin-top: 23%;
+    text-align: center;
+}
+
+.content_font1{
+    font-family: "Lato", sans-serif;
+    color: black;
+    font-size: 3.5rem;
+}
+
+.content_font2{
+    font-family: "Lato", sans-serif;
+    color: var(--light);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.icons{
+    margin-top: 10%;
+    display: flex;
+}
+
+.icon{
+    margin-right: 30px;
+}
+
+.icon img{
+    width: 60px;
+    height: 60px;
+}
+
+.icon_info{
+    text-align: center;
+}
+
+/* Edit Line 48 --> class ="features" */
+.features{
+    grid-column: 2 / span 6;
+    background-color: #353b63;
+    margin-top: 6%; 
+    /* top right bottom left */
+    padding: 30px 0px 0px 20px;
+    display: flex;
+    align-items: left;
+}
+
+.feature{
+    display: flex;
+    /* top right bottom left */
+    margin: 0px 10px 30px 10px;
+}
+
+.feature img{
+    width: 130px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.feature_info p{
+    color: black;
+}
+
+.feature_top, .feature_more{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.feature_bottom{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.feature:nth-child(3){
+    align-self: flex-start;
+}
+
+.feature_more{
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.feature_more:hover{
+    color: var(--accent);
+}
+
+/* Responsive Website*/
+@media only screen and (max-width:1100px){
+    .icon img{
+        height: 55px;
+        width: auto;
+    }
+    .content_font1 .content_font2{
+        font-size: 2.75rem;
+    }
+    .feature{
+        grid-column: 1 / span 7;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    .info{
+        grid-column: 2 / span 6;
+    }
+    .icons{
+        flex-direction: column;
+    }
+    .content_font1 .content_font2{
+        font-size: 1.75rem;;
+    }
+    .features{
+        flex-direction: column;
+    }
+}
